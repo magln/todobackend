@@ -1,0 +1,9 @@
+FROM nginx
+MAINTAINER Mark Chen <magln.jin@gmail.com>
+
+RUN apt-get update && \
+    apt-get install curl -y
+    
+COPY todobackend.conf /etc/nginx/conf.d/todobackend.conf
+
+HEALTHCHECK --interval=3s --retries=20 CMD curl -fs http://localhost:${HTTP_PORT:-8000}
