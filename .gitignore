@@ -4,4 +4,10 @@ venv
 
 *.sqlite3
 
-Makefile
+src/.coverage
+src/*.xml
+
+src/*egg-info
+
+target
+reports
